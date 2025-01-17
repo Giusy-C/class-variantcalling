@@ -9,7 +9,7 @@ mkdir -p analysis
 
 cd analysis
 
-mkdir -p rawdata
+mkdir -p raw_data
 
 cd raw_data
 
@@ -17,7 +17,7 @@ cd /config/workspace/datiesame
 
 tar -xzvf data_resequencing.tar.gz -C /config/workspace/class-variantcalling/analysis/raw_data
 
-#per ottenere il path corretto di raw_data cliccare con tasto destro su rawdata
+#per ottenere il path corretto di raw_data cliccare con tasto destro su raw_data
 #al posto del comando sopra riportato possiamo fare solo tar -xzvf data_resequencing.tar.gz e poi spostare manualmente i campioni
 
 cd ..
@@ -138,10 +138,9 @@ mkdir -p tmp
 gatk --java-options "-Xmx4g -Xms4g" GenomicsDBImport \
       -V normal.g.vcf.gz \
       -V disease.g.vcf.gz \
-      --genomicsdb-workspace-path compared_db \   
+      --genomicsdb-workspace-path compared_db \
       --tmp-dir /config/workspace/class-variantcalling/analysis/variants/tmp \
       -L chr21
-
 
 ### on AMD64 this code ######
 ### finally we can call the genotypes jointly
