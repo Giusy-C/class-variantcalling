@@ -11,8 +11,6 @@ cd analysis
 
 mkdir -p raw_data
 
-cd raw_data
-
 cd /config/workspace/datiesame
 
 tar -xzvf data_resequencing.tar.gz -C /config/workspace/class-variantcalling/analysis/raw_data
