@@ -54,7 +54,7 @@ bwa mem \
 samtools sort -o normal_sorted.bam normal.bam
 samtools sort -o disease_sorted.bam disease.bam
 
-# index the bam file
+# index the bam file, cotrollare sempre che si siano formate le cartelle con l'estensione.bai
 samtools index normal_sorted.bam
 samtools index disease_sorted.bam
 
