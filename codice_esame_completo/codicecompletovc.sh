@@ -153,6 +153,14 @@ gatk --java-options "-Xmx4g" GenotypeGVCFs \
 
 #fare pwd per essere sicuri a questo punto di essere nella cartella variants
 
+mkdir -p cache
+
+## download hg38 (UCSC) version of database
+snpEff download -v hg38 -dataDir /config/workspace/class-variantcalling/analysis/variants/cache
+
+### to execute snpeff we need to contain the memory
+snpEff -Xmx4g ann -dataDir /config/workspace/class-variantcalling/analysis/variants/cache -v hg38 results.vcf.gz >results_ann.vcf
+
 
 ### to execute snpeff we need to contain the memory
 snpEff -Xmx4g ann -dataDir /config/workspace/snpeff_data -v hg38 results.vcf.gz >results_ann.vcf
